@@ -18,6 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: 'LocalHost-1'
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
