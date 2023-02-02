@@ -14,10 +14,12 @@ LABEL MAINTAINER="Appsecco"
 
 RUN cat /etc/*-release
 
+RUN rm -f /etc/apt/sources.list.d/microsoft-prod.list
+
 RUN apt-get update && apt-get install -y apt-transport-https
 
 RUN apt-get update \
-    && apt-get install -y apt-utils wget unzip dotnet-sdk-6.0 mono-xsp4 sqlite3
+    && apt-get install -y apt-utils wget unzip dotnet-sdk-7.0 aspnetcore-runtime-7.0 dotnet-runtime-7.0 mono-xsp4 sqlite3
 
 RUN wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
