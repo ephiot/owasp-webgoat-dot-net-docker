@@ -15,7 +15,7 @@ LABEL MAINTAINER="Appsecco"
 RUN apt-get update && apt-get install -y apt-transport-https
 
 RUN apt-get update \
-    && apt-get install -y apt-utils wget unzip dotnet6 mono-xsp4 sqlite3
+    && apt-get install -y apt-utils wget unzip dotnet-sdk-6.0 mono-xsp4 sqlite3
 
 RUN wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
