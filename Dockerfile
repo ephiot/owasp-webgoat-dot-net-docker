@@ -10,8 +10,10 @@ LABEL MAINTAINER="Appsecco"
 #    && dpkg -i packages-microsoft-prod.deb \
 #    && rm packages-microsoft-prod.deb
 
+# dotnet-sdk-7.0 aspnetcore-runtime-7.0 dotnet-runtime-7.0
+
 RUN apt-get update \
-    && apt-get install -y apt-utils wget unzip dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 mono-xsp4 sqlite3
+    && apt-get install -y apt-utils wget unzip dotnet6 mono-xsp4 sqlite3
 
 RUN wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
