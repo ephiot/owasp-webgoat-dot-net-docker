@@ -25,6 +25,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: 'protosofia_owasp-webgoat-dot-net'
+        dockerfile: 'Dockerfile'
         tags: |
           $(tag)
