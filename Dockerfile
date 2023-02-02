@@ -1,7 +1,7 @@
 # docker build -t appsecco/owasp-webgoat-dot-net .
 # docker run --name webgoat -it -p 9000:9000 -d appsecco/owasp-webgoat-dot-net
-#FROM mono:slim
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
+FROM mono:slim
+#FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
 LABEL MAINTAINER="Appsecco"
 
 ARG SONAR_PROJECT_KEY=Protosofia_owasp-webgoat-dotnet
@@ -51,13 +51,14 @@ RUN dotnet sonarscanner end /d:sonar.login="$SONAR_TOKEN"
 
 # Download the official ASP.NET Core Runtime image
 # to run the compiled application
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
-WORKDIR "/WebGoat.NET-master/WebGoat/"
+#FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+#FROM mono:slim
+#WORKDIR "/WebGoat.NET-master/WebGoat/"
 
 # Open port
-EXPOSE 9000
+#EXPOSE 9000
 
 # Copy the build output from the SDK image
-COPY --from=build /out .
+#COPY --from=build /out .
 
-CMD [ "xsp4", "--printlog" ]
+#CMD [ "xsp4", "--printlog" ]
