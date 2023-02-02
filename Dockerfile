@@ -8,7 +8,7 @@ RUN apt-get update \
     && wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
     && cd /WebGoat.NET-master/WebGoat/ \
-    && msbuild -v:diag 
+    && dotnet build --verbosity detailed
 
 EXPOSE 9000
 
