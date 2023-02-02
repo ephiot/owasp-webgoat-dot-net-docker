@@ -4,7 +4,7 @@ FROM mono:slim
 LABEL MAINTAINER="Appsecco"
 
 RUN apt-get update \
-    && apt-get install -y wget unzip mono-xsp4 sqlite3 \
+    && apt-get install -y apt-utils wget unzip mono-xsp4 sqlite3 \
     && wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
     && cd /WebGoat.NET-master/WebGoat/ \
