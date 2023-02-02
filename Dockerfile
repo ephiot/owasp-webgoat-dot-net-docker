@@ -11,11 +11,13 @@ LABEL MAINTAINER="Appsecco"
 #    && rm packages-microsoft-prod.deb
 
 RUN apt-get update \
-    && apt-get install -y apt-utils wget unzip dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 mono-xsp4 sqlite3 \
-    && wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
+    && apt-get install -y apt-utils wget unzip dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-runtime-6.0 mono-xsp4 sqlite3
+
+RUN wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
-    && cd /WebGoat.NET-master/WebGoat/ \
-    && dotnet build --verbosity detailed
+    && cd /WebGoat.NET-master/WebGoat/
+
+RUN dotnet build --verbosity detailed
 
 EXPOSE 9000
 
