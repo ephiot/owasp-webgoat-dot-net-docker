@@ -7,12 +7,11 @@ RUN apt-get update \
     && apt-get install -y wget unzip mono-xsp4 sqlite3 \
     && wget https://github.com/jerryhoff/WebGoat.NET/archive/master.zip \
     && unzip master.zip \
-    && cd /WebGoat.NET-master/WebGoat/
+    && cd /WebGoat.NET-master/WebGoat/ \
     && msbuild
 
-WORKDIR "/WebGoat.NET-master/WebGoat/"
-
-# Open port
 EXPOSE 9000
+
+WORKDIR "/WebGoat.NET-master/WebGoat/"
 
 CMD [ "xsp4", "--printlog" ]
