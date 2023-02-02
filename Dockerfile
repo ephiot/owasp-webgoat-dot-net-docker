@@ -19,7 +19,7 @@ RUN rm -f /etc/apt/sources.list.d/microsoft-prod.list
 RUN apt-get update && apt-get install -y apt-transport-https apt-utils wget unzip
 
 RUN wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh \
-    && chmod +x ./dotnet-install.sh
+    && chmod +x ./dotnet-install.sh \
     && ./dotnet-install.sh --version latest
 
 RUN apt-get update \
