@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: 'Azure Pipelines'
+      name: 'LocalHost-2'
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
