@@ -29,6 +29,8 @@ stages:
       name: 'LocalHost-2'
       vmImage: $(vmImageName)
     steps:
+    - checkout: self
+      fetchDepth: 0
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
